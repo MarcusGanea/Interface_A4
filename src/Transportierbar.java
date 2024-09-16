@@ -2,16 +2,15 @@
 public interface Transportierbar {
     float MAX_GEWICHT_PRO_FLAECHE = 29.99f;
 
-    int gewichtKg();
-    int laengeCm();
-    int breiteCm();
-    int hoeheCm();
+    float gewicht();
+    float laenge();
+    float breite();
+    float hoehe();
 
     boolean zerbrechlich();
-    boolean stapelbar();
     String beschriftung();
 
     default float berechneVolumen() {
-        return (laengeCm() / 100.0f) * (breiteCm() / 100.0f) * (hoeheCm() / 100.0f);
+        return (laenge() * breite() * hoehe());
     }
 }

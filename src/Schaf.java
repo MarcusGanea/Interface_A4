@@ -1,54 +1,40 @@
+// Datei: src/Schaf.java
 public class Schaf implements Transportierbar {
-    private int gewicht;
-    private int laenge;
-    private int breite;
-    private int hoehe;
-    private boolean zerbrechlich;
-    private boolean stapelbar;
-    private String beschriftung;
+    public String name;
+    public boolean zerbrechlich;
+    public float gewicht, laenge, hoehe, breite;
 
-    public Schaf(int gewicht, int laenge, int breite, int hoehe, boolean zerbrechlich, boolean stapelbar, String beschriftung) {
+    public Schaf(String name, boolean zerbrechlich, float gewicht, float laenge, float breite, float hoehe) {
+        this.name = name;
+        this.zerbrechlich = zerbrechlich;
         this.gewicht = gewicht;
         this.laenge = laenge;
         this.breite = breite;
         this.hoehe = hoehe;
-        this.zerbrechlich = zerbrechlich;
-        this.stapelbar = stapelbar;
-        this.beschriftung = beschriftung;
     }
 
-    @Override
-    public int gewichtKg() {
+    public float gewicht() {
         return gewicht;
     }
 
-    @Override
-    public int laengeCm() {
+    public float laenge() {
         return laenge;
     }
 
-    @Override
-    public int breiteCm() {
+    public float breite() {
         return breite;
     }
 
-    @Override
-    public int hoeheCm() {
+    public float hoehe() {
         return hoehe;
     }
 
-    @Override
     public boolean zerbrechlich() {
         return zerbrechlich;
     }
 
-    @Override
-    public boolean stapelbar() {
-        return stapelbar;
-    }
-
-    @Override
     public String beschriftung() {
-        return beschriftung;
+        String text = "Lebewesen: Schaf " + name;
+        return text;
     }
 }
