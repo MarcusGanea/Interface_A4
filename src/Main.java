@@ -7,11 +7,19 @@ public class Main {
         System.out.println("\nTransportdetails fuer den Tisch:\n");
         System.out.println("Volumen:             " + InterfaceTest.berechneVolumen(myTisch) + " m^3");
         System.out.println("Verpackungsaufdruck: " + InterfaceTest.erstelleBeschriftung(myTisch));
-        System.out.println("Transport machbar:   " + InterfaceTest.transportMachbar(myTisch));
+        if (!InterfaceTest.transportMachbar(myTisch)) {
+            System.out.println("Transport ist nicht moeglich: " + InterfaceTest.transportUnmoeglichGrund(myTisch));
+        } else {
+            System.out.println("Transport machbar");
+        }
 
         System.out.println("\n\nTransportdetails fuer das Schaf:\n");
         System.out.println("Volumen:             " + InterfaceTest.berechneVolumen(mySchaf) + " m^3");
         System.out.println("Verpackungsaufdruck: " + InterfaceTest.erstelleBeschriftung(mySchaf));
-        System.out.println("Transport machbar:   " + InterfaceTest.transportMachbar(mySchaf));
+        if (!InterfaceTest.transportMachbar(mySchaf)) {
+            System.out.println("Transport ist nicht moeglich: " + InterfaceTest.transportUnmoeglichGrund(mySchaf));
+        } else {
+            System.out.println("Transport machbar");
+        }
     }
 }

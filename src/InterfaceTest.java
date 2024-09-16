@@ -1,13 +1,13 @@
 // Datei: src/InterfaceTest.java
 public class InterfaceTest {
+    private static Transporter transporter = new Transporter();
+
     public static boolean transportMachbar(Transportierbar tDetails) {
-        float gewicht = tDetails.gewicht();
-        float laenge = tDetails.laenge();
-        float breite = tDetails.breite();
+        return transporter.isTransportable(tDetails);
+    }
 
-        float gewichtProFlaeche = gewicht / (laenge * breite);
-
-        return gewichtProFlaeche < Transportierbar.MAX_GEWICHT_PRO_FLAECHE;
+    public static String transportUnmoeglichGrund(Transportierbar tDetails) {
+        return transporter.getTransportabilityReason(tDetails);
     }
 
     public static float berechneVolumen(Transportierbar tDetails) {
@@ -23,6 +23,4 @@ public class InterfaceTest {
 
         return text;
     }
-
-
 }
