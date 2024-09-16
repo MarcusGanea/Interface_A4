@@ -5,14 +5,36 @@ Author: Ganea Marcus-Alin <br>
 LBS Eibiswald | 2aAPC <br>
 Erstellt am 16.09.2024
 
-Diese Anwendung ist die zeite Übung vom Labor ITL12...<br>
+Diese Anwendung ist die vierte Übung von INF...<br>
 
 ## Das Ziel der Übung
-### Erstelle eine Elternklasse: Kontoklasse und drei Ableitungen: Girokonto, Sparkonto und Kreditkonto
 
-•	Kontoverwaltung 
-•	Es ist die Klassenstruktur sowie ein Menü zur Bedienung von zwei Konten zu implementieren.
-•	Zwei Konten sind für die letzte Methode überweisen notwendig
+### Erstelle eine Klasse "Tisch" und "Schaf" von Transportierbar
+Füge der Klasse Transport die Methode "berechneVolumen()" hinzu.
+Überprüfe ob der Transport machbar ist bzw. berechne das Volumen von Tisch und Schaf.
+public interface Transportierbar
+{
+  float MAX_GEWICHT_PRO_FLAECHE = 29.99f;
+ 
+  // alle Methoden in Interfaces sind implizit public und abstract
+  int gewichtKg();
+  int laengeCm();
+  int breiteCm();
+  int hoeheCm();
+ 
+  boolean zerbrechlich();
+  boolean stapelbar();
+  String beschriftung();
+}
+ 
+
+Ein Interface ist genau dann besonders sinnvoll, wenn es Eigenschaften einer Klasse beschreibt (vorgibt), die nicht direkt in der Vererbungshierachie abgebildet werden können.
+
+Um dieses Merkmal bei unserem Interface Transportierbar optimal zu nutzen, werden wir eine zweite Klasse definieren, welche nicht in die Vererbungshierarchie der Klasse Tisch passt.
+
+Die folgende Klasse Schaf steht der Klasse Tisch aus Vererbungssicht nicht sehr nahe, daher würden sich beide Klassen nur umständlich in einer gemeinsamen Vererbungshierarchie abbilden lassen. Da die Klasse Schaf aber auch über bestimmte Eigenschaften der Klasse Tisch verfügen soll, ist hier die Verwendung eines gemeinsamen Interfaces der richtige Weg.
+
+Das Interface Transportierbar beschreibt dabei für beide implementierenden Klassen die wichtigen Transportdetails, die natürlich noch in jeder der beiden Klassen entsprechend implementiert werden müssen. Das Interface Transportierbar liefert nur die Methodendeklarationen als gemeinsame Schnittstelle.
 
 
 ## Installation
@@ -64,7 +86,7 @@ public class Main {
 
 ## Screenshots
 
-![Screen Shot](A2_Kontoverwaltung/Screen1.png)
+![Screen Shot](Screen1.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
